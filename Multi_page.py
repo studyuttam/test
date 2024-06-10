@@ -10,6 +10,7 @@ import functions as f
 import matplotlib.pyplot as plt
 import re
 
+
 # Download the stopwords from nltk
 nltk.download('punkt')
 nltk.download('stopwords')
