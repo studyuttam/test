@@ -13,6 +13,7 @@ import re
 
 nltk.download('all')
 
+# Set the title of the web app
 # Create a list of pages
 pages = ['Population Analysis', 'Qualitative Analysis', 'Quantitative Analysis','NYT Staff Information']
 
