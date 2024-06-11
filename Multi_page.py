@@ -11,9 +11,7 @@ import matplotlib.pyplot as plt
 import re
 
 
-# Download the stopwords from nltk
-nltk.download('punkt')
-nltk.download('stopwords')
+
 
 # Create a list of pages
 pages = ['Population Analysis', 'Qualitative Analysis', 'Quantitative Analysis','NYT Staff Information']
