@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 import re
 
 
-
+nltk.download('all')
 
 # Create a list of pages
 pages = ['Population Analysis', 'Qualitative Analysis', 'Quantitative Analysis','NYT Staff Information']
