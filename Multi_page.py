@@ -9,7 +9,7 @@ from collections import Counter
 import functions as f
 import matplotlib.pyplot as plt
 import re
-
+import auth as a
 
 nltk.download('all')
 
@@ -208,16 +208,19 @@ if page == 'Population Analysis':
     # Add your population analysis code here
 
 
+
 elif page == 'Qualitative Analysis':
-    st.title('Welcome to Qualitative Analysis Dashboard!')
-    st.write('Our website serves as a comprehensive platform dedicated to exploring the qualitative '
+    if a.login():
+
+        st.title('Welcome to Qualitative Analysis Dashboard!')
+        st.write('Our website serves as a comprehensive platform dedicated to exploring the qualitative '
         'analysis of the National Youth Theatre project within the Assemble Project. At the '
         'heart of our endeavor lies a profound commitment to fostering inclusivity, particularly '
         'for individuals with disabilities, within the vibrant landscape of youth theatre', unsafe_allow_html=True, font_size=20, style='color:blue')
     
-
-    # Add your qualitative analysis code here
-    qualitative_analysis()
+        #if login is successful, display the qualitative analysis page and clear the login page
+        
+        qualitative_analysis()
 
 elif page == 'Quantitative Analysis':
     st.write('Quantitative Analysis')
