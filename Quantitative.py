@@ -35,8 +35,8 @@ def quantitative_analysis():
     else:
 
       #display the selected local authority and age group
-      st.write('Selected Local Authority:', local_authority)
-      st.write('Selected Age Group:', age_group)
+      #st.write('Selected Local Authority:', local_authority)
+      #st.write('Selected Age Group:', age_group)
 
 
       st.header('Borough Level Disabled Population Analysis')
@@ -69,13 +69,24 @@ def quantitative_analysis():
       st.write('Total UK Population:', total_UK_population[total_UK_population['Population'] != '[c]']['Population'].sum())
 
       percentage_uk_population = (total_population['Population'].sum() / total_UK_population[total_UK_population['Population'] != '[c]']['Population'].sum()) * 100
+      
+      st.markdown("""
+      <style>
+          .stCard>div {
+              height: 150px;  /* Adjust the height as needed */
+          }
+      </style>
+      """, unsafe_allow_html=True)
+      
       #Total Population and Disabled Population in a card
-      cols = st.columns(2)
+      cols = st.columns(3)
       with cols[0]:
-        
+        total_uk_population_millions = round(total_UK_population[total_UK_population['Population'] != '[c]']['Population'].sum() / 1e6, 2)
+        ui.metric_card(title="UK Poulation", content= total_uk_population_millions, description='In Millions', key="card0")
+      with cols[1]:
         content = f"{total_population['Population'].sum():,} ({percentage_uk_population:.2f}%)"
         ui.metric_card(title="Total Population", content=content, description="Percentage of UK population ", key="card1")
-      with cols[1]:
+      with cols[2]:
         # Calculate the percentage of disabled population out of total population
         percentage_disabled = (disabled_population['Count'].sum() / total_population['Population'].sum()) * 100
 
@@ -183,3 +194,6 @@ def quantitative_analysis():
   with tab4:
     st.header('Education')
     st.write('Coming Soon')
+
+if __name__ == '__main__':
+  quantitative_analysis()
