@@ -123,3 +123,4 @@ wordcloud==1.9.3
 wrapt==1.14.1
 yarl==1.9.2
 zipp==3.15.0
+seaborn==0.11.2
