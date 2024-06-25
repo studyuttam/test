@@ -10,8 +10,17 @@ import functions as f
 import matplotlib.pyplot as plt
 import re
 import auth as a
+import os
 
-nltk.download('all')
+# Specify the NLTK data directory
+nltk_data_dir = '/root/nltk_data'
+
+# Check if the directory exists
+if not os.path.exists(nltk_data_dir):
+    # Attempt to download the data only if the directory does not exist
+    nltk.download('all', download_dir=nltk_data_dir)
+else:
+    print("NLTK data already exists.")
 
 #test01
 # Set the title of the web app
