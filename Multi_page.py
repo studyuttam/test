@@ -223,8 +223,12 @@ elif page == 'Qualitative Analysis':
         qualitative_analysis()
 
 elif page == 'Quantitative Analysis':
-    st.write('Quantitative Analysis')
+    #st.write('Quantitative Analysis')
     # Add your quantitative analysis code here
+    import Quantitative as q
+    q.quantitative_analysis()
+
+    
 
 elif page == 'NYT Staff Information':
     st.write('NYT Staff Information')
