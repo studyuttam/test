@@ -3,6 +3,7 @@ import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
 import seaborn as sns
+import matplotlib.cm as cm
 import streamlit_shadcn_ui as ui
 
 def quantitative_analysis():
@@ -84,7 +85,8 @@ def quantitative_analysis():
         # Update the ui.metric_card to display the new content
         ui.metric_card(title="Disabled Population", content=content, description="Percentage of Borough population", key="card2")
       
-      # Add space between card and plots
+
+          # Add space between card and plots
       st.markdown(" " * 5)  # Adjust the number of "\n" based on the desired space
       
       # Create a figure for 4x1 subplots
@@ -167,7 +169,6 @@ def quantitative_analysis():
       plt.title('Disabled Population For Top 10 Local Authority', fontsize=20, fontweight='bold', y=1.05) 
       st.pyplot(plt)
 
-
       #UK Map
       import uk_map
 
@@ -182,7 +183,3 @@ def quantitative_analysis():
   with tab4:
     st.header('Education')
     st.write('Coming Soon')
-
-
-if __name__ == '__main__':
-    quantitative_analysis()
